@@ -1,4 +1,4 @@
-using maintenance as my from '../db/data-model';
+using db as my from '../db/data-model';
 service MaintenanceService {
    @readonly
    entity Aircraft as projection on my.Aircraft;
