@@ -84,6 +84,11 @@
       "config": {},
       "routes": [
         {
+          "pattern": "",
+          "name": "Overview",
+          "target": "Overview"
+        },
+        {
           "pattern": ":?query:",
           "name": "AircraftList",
           "target": "AircraftList"
@@ -95,6 +100,15 @@
         }
       ],
       "targets": {
+        "Overview": {
+          "viewName": "project1.view.Overview",
+          "viewType": "XML"
+        },
+        "App": {
+          "viewName": "project1.view.App",
+          "viewType": "XML",
+          "controlAggregation": "rootControl"
+        },
         "AircraftList": {
           "type": "Component",
           "id": "AircraftList",

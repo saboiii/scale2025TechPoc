@@ -1,0 +1,9 @@
+{
+  "Aircraft": [
+    {"tailNumber":"SA8880","model":"Airbus A330","lastCheck":"2024-09-24","nextCheck":"2026-03-27","flightHours":2847},
+    {"tailNumber":"KE2815","model":"Airbus A350","lastCheck":"2025-01-30","nextCheck":"2026-01-28","flightHours":3714},
+    {"tailNumber":"DL6343","model":"Airbus A350","lastCheck":"2024-08-16","nextCheck":"2025-07-11","flightHours":1122},
+    {"tailNumber":"QR5924","model":"Airbus A320","lastCheck":"2024-08-14","nextCheck":"2025-07-19","flightHours":1289},
+    {"tailNumber":"AF1454","model":"Boeing 737","lastCheck":"2025-01-19","nextCheck":"2025-11-20","flightHours":4439}
+  ]
+}

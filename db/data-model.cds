@@ -10,6 +10,7 @@ entity Aircraft {
 
 type FlightStatusEnum : String enum {
   READY;
+  SCHEDULED;
   IN_FLIGHT;
   OUT_OF_ORDER;
   UNDER_MAINTENANCE;
