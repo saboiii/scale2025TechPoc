@@ -4,11 +4,11 @@
   xmlns="sap.m"
   xmlns:core="sap.ui.core"
 >
-  <VBox class="sapUiMediumMargin sapUiResponsiveMargin" width="400px" alignItems="Center" justifyContent="Center">
+<VBox alignItems="Center" height="100%" justifyContent="Center">
     <Title text="Login" level="H2" />
     <Input id="usernameInput" placeholder="Username" width="100%" />
-    <Input id="passwordInput" type="Password" placeholder="Password" width="100%" />
-    <Select id="roleSelect" width="100%">
+    <Input id="passwordInput" type="Password" placeholder="Password" />
+    <Select id="roleSelect">
       <items>
         <core:Item key="admin" text="Admin" />
         <core:Item key="pilot" text="Pilot" />
