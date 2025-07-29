@@ -2,9 +2,9 @@
   controllerName="project1.controller.Overview"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m"
-  xmlns:f="sap.f"
-  xmlns:core="sap.ui.core">
-  <Panel headerText="Aircraft Overview">
+  xmlns:core="sap.ui.core"
+>
+  <Panel headerText="Aircraft Overview" class="card-panel sapUiResponsiveMargin" width="auto">
     <List
       id="aircraftList"
       items="{/Aircraft}">
@@ -28,5 +28,38 @@
         </HBox>
       </CustomListItem>
     </List>
+  </Panel>
+
+  <Panel headerText="Schedule Queue" class="card-panel sapUiResponsiveMargin" width="auto">
+    <List
+      id="scheduleQueueList"
+      items="{/ScheduleQueue}">
+      <CustomListItem>
+        <HBox justifyContent="SpaceBetween" alignItems="Center">
+          <VBox>
+            <Text text="Flight #: {flightNumber}" />
+            <Text text="Tail #: {aircraft}" />
+            <Text text="Departure: {departure}" />
+            <Text text="Arrival: {arrival}" />
+            <Text text="Status: {status}" />
+          </VBox>
+          <Button
+            text="Remove"
+            press="onRemoveQueueItem"
+            enabled="true">
+            <customData>
+              <core:CustomData key="QueueIndex" value="{#}" />
+              <core:CustomData key="TailNumber" value="{aircraft}" />
+            </customData>
+          </Button>
+        </HBox>
+      </CustomListItem>
+    </List>
+    <Button
+      text="Post Next to BPA API"
+      press="onPostNextQueueItem"
+      enabled="{= ${/ScheduleQueue}.length > 0 }"
+      style="Emphasized"
+    />
   </Panel>
 </mvc:View>

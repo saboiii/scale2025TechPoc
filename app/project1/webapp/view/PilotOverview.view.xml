@@ -1,0 +1,24 @@
+<mvc:View
+  controllerName="project1.controller.PilotOverview"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:u="sap.ui.unified"
+>
+  <Panel headerText="Pilot Overview" class="card-panel sapUiMediumMargin sapUiResponsiveMargin" width="auto">
+    <VBox alignItems="Center" justifyContent="Center">
+      <Title text="Upload Flight PDF" level="H3" />
+      <u:FileUploader
+        id="pdfUploader"
+        name="pdfUpload"
+        uploadUrl="/upload/"
+        fileType="pdf"
+        tooltip="Upload your PDF file"
+        width="100%"
+        uploadComplete="handleUploadComplete"
+      />
+      <Button text="Submit for OCR" type="Emphasized" press="onSubmitOCR" width="100%" />
+      <Text id="ocrResultText" text="" class="sapUiSmallMarginTop" />
+    </VBox>
+  </Panel>
+</mvc:View>

@@ -9,6 +9,12 @@
       "destination": "ui5"
     },
     {
+      "source": "^/model/(.*)$",
+      "target": "/model/$1",
+      "localDir": "app",
+      "authenticationType": "none"
+    },
+    {
       "source": "^/test-resources/(.*)$",
       "target": "/test-resources/$1",
       "authenticationType": "none",

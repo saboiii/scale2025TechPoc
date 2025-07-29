@@ -15,7 +15,7 @@
       "version": "1.18.0",
       "toolsId": "f7d7723d-fb69-46d4-9f8b-844d696701d4"
     },
-    "dataSources": {
+    "_DISABLED_dataSources": {
       "mainService": {
         "uri": "/odata/v4/maintenance/",
         "type": "OData",
@@ -63,7 +63,7 @@
           "bundleName": "project1.i18n.i18n"
         }
       },
-      "": {
+      "_DISABLED_": {
         "dataSource": "mainService",
         "preload": true,
         "settings": {
@@ -78,15 +78,29 @@
       }
     },
     "resources": {
-      "css": []
+      "css": [
+    {
+      "uri": "css/style.css"
+    }
+    ]
     },
     "routing": {
       "config": {},
       "routes": [
         {
           "pattern": "",
+          "name": "Login",
+          "target": "Login"
+        },
+        {
+          "pattern": "overview",
           "name": "Overview",
           "target": "Overview"
+        },
+        {
+          "pattern": "pilot",
+          "name": "PilotOverview",
+          "target": "PilotOverview"
         },
         {
           "pattern": ":?query:",
@@ -100,13 +114,25 @@
         }
       ],
       "targets": {
+        "Login": {
+          "viewName": "Login",
+          "viewType": "XML",
+          "viewPath": "project1.view"
+        },
         "Overview": {
-          "viewName": "project1.view.Overview",
-          "viewType": "XML"
+          "viewName": "Overview",
+          "viewType": "XML",
+          "viewPath": "project1.view"
+        },
+        "PilotOverview": {
+          "viewName": "PilotOverview",
+          "viewType": "XML",
+          "viewPath": "project1.view"
         },
         "App": {
-          "viewName": "project1.view.App",
+          "viewName": "App",
           "viewType": "XML",
+          "viewPath": "project1.view",
           "controlAggregation": "rootControl"
         },
         "AircraftList": {
