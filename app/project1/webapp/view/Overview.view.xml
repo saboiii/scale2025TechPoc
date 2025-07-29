@@ -4,10 +4,11 @@
   xmlns="sap.m"
   xmlns:core="sap.ui.core"
 >
-  <Panel headerText="Aircraft Overview" class="card-panel sapUiResponsiveMargin" width="auto">
-    <List
-      id="aircraftList"
-      items="{/Aircraft}">
+  <Panel headerText="Aircraft Overview" class="card-panel sapUiResponsiveMargin" width="auto" height="400px">
+    <ScrollContainer height="320px" vertical="true">
+      <List
+        id="aircraftList"
+        items="{/Aircraft}">
       <CustomListItem>
         <HBox justifyContent="SpaceBetween" alignItems="Center">
           <VBox>
@@ -28,12 +29,14 @@
         </HBox>
       </CustomListItem>
     </List>
+    </ScrollContainer>
   </Panel>
 
-  <Panel headerText="Schedule Queue" class="card-panel sapUiResponsiveMargin" width="auto">
-    <List
-      id="scheduleQueueList"
-      items="{/ScheduleQueue}">
+  <Panel headerText="Schedule Queue" class="card-panel sapUiResponsiveMargin" width="auto" height="400px">
+    <ScrollContainer height="320px" vertical="true">
+      <List
+        id="scheduleQueueList"
+        items="{/ScheduleQueue}">
       <CustomListItem>
         <HBox justifyContent="SpaceBetween" alignItems="Center">
           <VBox>
@@ -55,8 +58,9 @@
         </HBox>
       </CustomListItem>
     </List>
+    </ScrollContainer>
     <Button
-      text="Post Next to BPA API"
+      text="Process Next Flight"
       press="onPostNextQueueItem"
       enabled="{= ${/ScheduleQueue}.length > 0 }"
       style="Emphasized"

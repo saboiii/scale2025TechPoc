@@ -65,22 +65,24 @@ sap.ui.define([
             if (this.scheduleQueue.length > 0) {
                 var nextFlight = this.scheduleQueue[0]; // Don't pop yet
                 console.log("Processing flight:", nextFlight);
-                // Call BPA API (replace with your endpoint)
-                fetch("https://your-bpa-api/schedule", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ tailNumber: nextFlight.aircraft, status: nextFlight.status })
+                // Call flightStatus service checkAndSchedule action
+                fetch("https://sap-scale-mockapi.vercel.app/api/getflightStatus", {
+                    method: "GET",
                 })
                     .then(function (response) { return response.json(); })
                     .then(function (data) {
-                        console.log("BPA API response:", data);
-                        // Only remove from queue if successful
-                        this.scheduleQueue.shift();
-                        // Update ScheduleQueue in the model for the card
-                        oModel.setProperty("/ScheduleQueue", this.scheduleQueue.slice());
+                        console.log("flightStatus service response:", data);
+                        if (data.status && data.status === "Approve") {
+                            this.scheduleQueue.shift();
+                            oModel.setProperty("/ScheduleQueue", this.scheduleQueue.slice());
+                            MessageToast.show("Flight " + nextFlight.flightNumber + " approved and set to IN_FLIGHT!");
+                        } else {
+                            MessageToast.show("Flight " + nextFlight.flightNumber + " is still pending approval.");
+                        }
                     }.bind(this))
                     .catch(function (err) {
-                        console.error("BPA API error:", err);
+                        console.error("flightStatus service error:", err);
+                        MessageToast.show("Failed to process flight " + nextFlight.flightNumber);
                         // Do not remove from queue
                     });
             }
@@ -90,22 +92,23 @@ sap.ui.define([
             var oModel = this.getView().getModel();
             if (this.scheduleQueue.length > 0) {
                 var nextFlight = this.scheduleQueue[0]; // Don't pop yet
-                console.log("Manually posting flight to BPA API:", nextFlight);
-                fetch("https://your-bpa-api/schedule", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ tailNumber: nextFlight.aircraft, status: nextFlight.status })
+                console.log("Manually posting flight to flightStatus service:", nextFlight);
+                fetch("https://sap-scale-mockapi.vercel.app/api/getflightStatus", {
+                    method: "GET",
                 })
                     .then(function (response) { return response.json(); })
                     .then(function (data) {
-                        console.log("BPA API response:", data);
-                        // Only remove from queue if successful
-                        this.scheduleQueue.shift();
-                        oModel.setProperty("/ScheduleQueue", this.scheduleQueue.slice());
-                        MessageToast.show("Posted and removed flight " + nextFlight.flightNumber + " from queue.");
+                        console.log("flightStatus service response:", data);
+                        if (data.status && data.status === "Approve") {
+                            this.scheduleQueue.shift();
+                            oModel.setProperty("/ScheduleQueue", this.scheduleQueue.slice());
+                            MessageToast.show("Flight " + nextFlight.flightNumber + " approved and removed from queue.");
+                        } else {
+                            MessageToast.show("Flight " + nextFlight.flightNumber + " is still pending approval. Keeping in queue.");
+                        }
                     }.bind(this))
                     .catch(function (err) {
-                        console.error("BPA API error:", err);
+                        console.error("flightStatus service error:", err);
                         MessageToast.show("Failed to post flight " + nextFlight.flightNumber + ". Still in queue.");
                     });
             } else {

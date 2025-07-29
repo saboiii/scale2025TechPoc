@@ -11,7 +11,7 @@ module.exports = srv => {
     const flight = await SELECT.one.from(flightStatus).where({ flightNumber });
     if (!flight) return req.error(404, `Flight ${flightNumber} not found.`);
 
-    if (flight.status !== 'READY') {
+    if (flight.status !== 'SCHEDULED') {
       return `Flight ${flightNumber} is not READY (current status: ${flight.status}).`;
     }
 
