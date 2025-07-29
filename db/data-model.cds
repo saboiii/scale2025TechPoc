@@ -18,11 +18,12 @@ type FlightStatusEnum : String enum {
 
 entity flightStatus {
   key flightNumber : String;
-      aircraft     : Association to Aircraft;
+      tailNumber     : String(10);
       departure    : String;
       arrival      : String;
       status       : FlightStatusEnum;
 }
+
 
 type MaintenanceStatusEnum : String enum {
   PENDING;
@@ -33,7 +34,7 @@ type MaintenanceStatusEnum : String enum {
 
 entity maintenanceQueue {
   key maintenanceID : String(10);
-      aircraft      : Association to Aircraft;
+      tailNumber      : String(10);
       issueDetected : String;
       source        : String(50);
       status        : MaintenanceStatusEnum;
@@ -49,8 +50,8 @@ type BookingStatusEnum : String enum {
 
 entity booking {
   key bookingID    : String(10);
-      user         : Association to User;
-      flight       : Association to flightStatus;
+      user         : String(10);
+      flightNumber : String;
       seatNumber   : String(5);
       mealPref     : String(30);
       accessibility: String(50);
@@ -83,7 +84,7 @@ type PricingStatusEnum : String enum {
 
 entity pricingAndCapacity {
   key pricingID     : String(10);                  
-      flight        : Association to flightStatus;  
+      flight        : String;  
       totalSeats    : Integer;                      
       bookedSeats   : Integer;                      
       occupancyPct  : Decimal(5,2);                 

@@ -1,0 +1,120 @@
+maintenanceID;tailNumber;issueDetected;source;status;assignedTo;deadline
+NT9001;SA8880;;OCR Checklist;PENDING;Technician A;2025-08-02
+MNT9002;KE2815;;Pre-flight inspection;IN_PROGRESS;Technician B;2025-08-05
+MNT9003;DL6343;;Pilot report;PENDING;Technician C;2025-08-03
+MNT9004;QR5924;;Post-flight check;COMPLETED;Technician A;2025-07-30
+MNT9005;AF1454;;Ground crew report;IN_PROGRESS;Technician D;2025-08-01
+MNT9006;ET4010;;OCR Checklist;OVERDUE;Technician E;2025-07-28
+MNT9007;SK3823;;Routine maintenance;PENDING;Technician F;2025-08-04
+MNT9008;LA9571;;Pilot report;IN_PROGRESS;Technician A;2025-08-06
+MNT9009;AA7291;;Ground crew report;COMPLETED;Technician B;2025-07-31
+MNT9010;BA8817;;Pre-flight inspection;PENDING;Technician C;2025-08-07
+MNT9011;AF8764;;Post-flight check;OVERDUE;Technician D;2025-07-27
+MNT9012;WN2726;;OCR Checklist;IN_PROGRESS;Technician E;2025-08-02
+MNT9013;AC1756;;Routine maintenance;PENDING;Technician F;2025-08-08
+MNT9014;SA7667;;Pilot report;COMPLETED;Technician A;2025-08-01
+MNT9015;TG8482;;Ground crew report;IN_PROGRESS;Technician B;2025-08-03
+MNT9016;TG5949;;Pre-flight inspection;OVERDUE;Technician C;2025-07-26
+MNT9017;SK7047;;Post-flight check;PENDING;Technician D;2025-08-09
+MNT9018;AC5785;;OCR Checklist;IN_PROGRESS;Technician E;2025-08-04
+MNT9019;SQ7108;;Routine maintenance;COMPLETED;Technician F;2025-08-02
+MNT9020;TG3656;;Pilot report;PENDING;Technician A;2025-08-10
+MNT9021;AV3043;;Ground crew report;OVERDUE;Technician B;2025-07-25
+MNT9022;WN7069;;Pre-flight inspection;PENDING;Technician C;2025-08-05
+MNT9023;AZ8773;;Post-flight check;IN_PROGRESS;Technician D;2025-08-11
+MNT9024;ET2023;;OCR Checklist;COMPLETED;Technician E;2025-08-03
+MNT9025;AV2901;;Routine maintenance;PENDING;Technician F;2025-08-06
+MNT9026;AI9700;;Pilot report;OVERDUE;Technician A;2025-07-24
+MNT9027;SQ2554;;Ground crew report;IN_PROGRESS;Technician B;2025-08-07
+MNT9028;ET6215;;Pre-flight inspection;COMPLETED;Technician C;2025-08-04
+MNT9029;CX4520;;Post-flight check;PENDING;Technician D;2025-08-12
+MNT9030;SK1999;;OCR Checklist;IN_PROGRESS;Technician E;2025-08-08
+MNT9031;AI6681;;Routine maintenance;OVERDUE;Technician F;2025-07-23
+MNT9032;AV6230;;Pilot report;PENDING;Technician A;2025-08-09
+MNT9033;KL9159;;Ground crew report;COMPLETED;Technician B;2025-08-05
+MNT9034;AA4201;;Pre-flight inspection;IN_PROGRESS;Technician C;2025-08-13
+MNT9035;TG8972;;Post-flight check;PENDING;Technician D;2025-08-10
+MNT9036;LH6321;;OCR Checklist;OVERDUE;Technician E;2025-07-22
+MNT9037;TG9555;;Routine maintenance;IN_PROGRESS;Technician F;2025-08-06
+MNT9038;KE7078;;Pilot report;COMPLETED;Technician A;2025-08-07
+MNT9039;NH6079;;Ground crew report;PENDING;Technician B;2025-08-14
+MNT9040;AM7303;;Pre-flight inspection;IN_PROGRESS;Technician C;2025-08-11
+MNT9041;TG7094;;Post-flight check;OVERDUE;Technician D;2025-07-21
+MNT9042;ET7092;;OCR Checklist;PENDING;Technician E;2025-08-12
+MNT9043;BA1442;;Routine maintenance;IN_PROGRESS;Technician F;2025-08-08
+MNT9044;LH3478;;Pilot report;COMPLETED;Technician A;2025-08-09
+MNT9045;AC2804;;Ground crew report;PENDING;Technician B;2025-08-15
+MNT9046;BA1907;;Pre-flight inspection;OVERDUE;Technician C;2025-07-20
+MNT9047;SK9521;;Post-flight check;IN_PROGRESS;Technician D;2025-08-13
+MNT9048;KL6095;;OCR Checklist;COMPLETED;Technician E;2025-08-10
+MNT9049;SK6503;;Routine maintenance;PENDING;Technician F;2025-08-16
+MNT9050;AM3135;;Pilot report;IN_PROGRESS;Technician A;2025-08-14
+MNT9051;KE5043;;Ground crew report;OVERDUE;Technician B;2025-07-19
+MNT9052;AI4437;;Pre-flight inspection;PENDING;Technician C;2025-08-11
+MNT9053;AZ2844;;Post-flight check;COMPLETED;Technician D;2025-08-12
+MNT9054;KL1090;;OCR Checklist;IN_PROGRESS;Technician E;2025-08-17
+MNT9055;NZ4614;;Routine maintenance;PENDING;Technician F;2025-08-13
+MNT9056;AM6576;;Pilot report;OVERDUE;Technician A;2025-07-18
+MNT9057;AZ7819;;Ground crew report;IN_PROGRESS;Technician B;2025-08-15
+MNT9058;IB3864;;Pre-flight inspection;COMPLETED;Technician C;2025-08-14
+MNT9059;QF4285;;Post-flight check;PENDING;Technician D;2025-08-18
+MNT9060;KL2216;;OCR Checklist;IN_PROGRESS;Technician E;2025-08-16
+MNT9061;TG1075;;Routine maintenance;COMPLETED;Technician F;2025-08-19
+MNT9162;UA8830;;Pilot report;PENDING;Technician A;2025-08-17
+MNT9163;LH6218;;Ground crew report;OVERDUE;Technician B;2025-07-17
+MNT9164;SQ2503;;Pre-flight inspection;IN_PROGRESS;Technician C;2025-08-20
+MNT9165;AC7701;;Post-flight check;COMPLETED;Technician D;2025-08-18
+MNT9166;BA4885;;OCR Checklist;PENDING;Technician E;2025-08-21
+MNT9167;AF2394;;Routine maintenance;IN_PROGRESS;Technician F;2025-08-19
+MNT9168;EK7648;;Pilot report;OVERDUE;Technician A;2025-07-16
+MNT9169;TK5029;;Ground crew report;COMPLETED;Technician B;2025-08-22
+MNT9170;QR3472;;Pre-flight inspection;PENDING;Technician C;2025-08-20
+MNT9171;CX8136;;Post-flight check;IN_PROGRESS;Technician D;2025-08-23
+MNT9172;VS9950;;OCR Checklist;COMPLETED;Technician E;2025-08-21
+MNT9173;UA2584;;Routine maintenance;OVERDUE;Technician F;2025-07-15
+MNT9174;DL7798;;Pilot report;PENDING;Technician A;2025-08-24
+MNT9175;AA1362;;Ground crew report;IN_PROGRESS;Technician B;2025-08-22
+MNT9176;WN4975;;Pre-flight inspection;COMPLETED;Technician C;2025-08-25
+MNT9177;B66118;;Post-flight check;PENDING;Technician D;2025-08-23
+MNT9178;AS3741;;OCR Checklist;OVERDUE;Technician E;2025-07-14
+MNT9179;NK8605;;Routine maintenance;IN_PROGRESS;Technician F;2025-08-26
+MNT9180;F94269;;Pilot report;COMPLETED;Technician A;2025-08-24
+MNT9062;AA7448;;Pilot report;PENDING;Technician A;2025-08-19
+MNT9063;DL1887;;Ground crew report;IN_PROGRESS;Technician B;2025-08-17
+MNT9064;UA8589;;Pre-flight inspection;COMPLETED;Technician C;2025-08-15
+MNT9065;LH8573;;Post-flight check;PENDING;Technician D;2025-08-20
+MNT9066;AM5855;;OCR Checklist;OVERDUE;Technician E;2025-07-16
+MNT9067;AM4292;;Routine maintenance;IN_PROGRESS;Technician F;2025-08-18
+MNT9068;AV3764;;Pilot report;COMPLETED;Technician A;2025-08-16
+MNT9069;NH8398;;Ground crew report;PENDING;Technician B;2025-08-21
+MNT9070;AV6390;;Pre-flight inspection;IN_PROGRESS;Technician C;2025-08-19
+MNT9071;KE5891;;Post-flight check;OVERDUE;Technician D;2025-07-15
+MNT9072;UA9984;;OCR Checklist;PENDING;Technician E;2025-08-17
+MNT9073;UA3491;;Routine maintenance;COMPLETED;Technician F;2025-08-20
+MNT9074;AV8222;;Pilot report;IN_PROGRESS;Technician A;2025-08-22
+MNT9075;SK2136;;Ground crew report;PENDING;Technician B;2025-08-18
+MNT9076;AZ8666;;Pre-flight inspection;OVERDUE;Technician C;2025-07-14
+MNT9077;SK2386;;Post-flight check;IN_PROGRESS;Technician D;2025-08-21
+MNT9078;AV7364;;OCR Checklist;COMPLETED;Technician E;2025-08-19
+MNT9079;IB9873;;Routine maintenance;PENDING;Technician F;2025-08-23
+MNT9080;QF6818;;Pilot report;IN_PROGRESS;Technician A;2025-08-20
+MNT9081;LH6645;;Ground crew report;OVERDUE;Technician B;2025-07-13
+MNT9082;AI9907;;Pre-flight inspection;PENDING;Technician C;2025-08-24
+MNT9083;KL3748;;Post-flight check;IN_PROGRESS;Technician D;2025-08-22
+MNT9084;TG4162;;OCR Checklist;COMPLETED;Technician E;2025-08-21
+MNT9085;BA7019;;Routine maintenance;PENDING;Technician F;2025-08-25
+MNT9086;TG3333;;Pilot report;OVERDUE;Technician A;2025-07-12
+MNT9087;QF3037;;Ground crew report;IN_PROGRESS;Technician B;2025-08-23
+MNT9088;ET5945;;Pre-flight inspection;COMPLETED;Technician C;2025-08-22
+MNT9089;IB8450;;Post-flight check;PENDING;Technician D;2025-08-26
+MNT9090;TG5206;;OCR Checklist;IN_PROGRESS;Technician E;2025-08-24
+MNT9091;AI5401;;Routine maintenance;OVERDUE;Technician F;2025-07-11
+MNT9092;NH9612;;Pilot report;PENDING;Technician A;2025-08-27
+MNT9093;SK3007;;Ground crew report;COMPLETED;Technician B;2025-08-25
+MNT9094;KE8507;;Pre-flight inspection;IN_PROGRESS;Technician C;2025-08-28
+MNT9095;SK9204;;Post-flight check;PENDING;Technician D;2025-08-23
+MNT9096;TG3277;;OCR Checklist;OVERDUE;Technician E;2025-07-10
+MNT9097;BA6235;;Routine maintenance;IN_PROGRESS;Technician F;2025-08-26
+MNT9098;DL2657;;Pilot report;COMPLETED;Technician A;2025-08-24
+MNT9099;AI6155;;Ground crew report;PENDING;Technician B;2025-08-29
+MNT9100;EK6800;;Pre-flight inspection;IN_PROGRESS;Technician C;2025-08-27
