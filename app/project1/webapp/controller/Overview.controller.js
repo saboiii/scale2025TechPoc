@@ -21,8 +21,13 @@ sap.ui.define([
             oMockModel.loadData("model/maintenance-Aircraft.json", null, true);
             oMockModel.attachRequestCompleted(function () {
                 console.log("Aircraft data loaded:", oMockModel.getProperty("/Aircraft"));
+                // Initialize InFlight list
+                oMockModel.setProperty("/InFlight", []);
             });
             this.getOwnerComponent().setModel(oMockModel, undefined); // override default model
+
+            // Start interval to increment flight hours for in-flight flights
+            this._inFlightInterval = setInterval(this._updateInFlight.bind(this), 1000);
         },
 
         onSchedulePress: function (oEvent) {
@@ -76,6 +81,12 @@ sap.ui.define([
                             this.scheduleQueue.shift();
                             oModel.setProperty("/ScheduleQueue", this.scheduleQueue.slice());
                             MessageToast.show("Flight " + nextFlight.flightNumber + " approved and set to IN_FLIGHT!");
+
+                            // Move to InFlight list
+                            var inFlight = oModel.getProperty("/InFlight");
+                            var flightObj = Object.assign({}, nextFlight, { status: "IN_FLIGHT", flightHours: 0, _inFlightSeconds: 0 });
+                            inFlight.push(flightObj);
+                            oModel.setProperty("/InFlight", inFlight);
                         } else {
                             MessageToast.show("Flight " + nextFlight.flightNumber + " is still pending approval.");
                         }
@@ -103,6 +114,12 @@ sap.ui.define([
                             this.scheduleQueue.shift();
                             oModel.setProperty("/ScheduleQueue", this.scheduleQueue.slice());
                             MessageToast.show("Flight " + nextFlight.flightNumber + " approved and removed from queue.");
+
+                            // Move to InFlight list
+                            var inFlight = oModel.getProperty("/InFlight");
+                            var flightObj = Object.assign({}, nextFlight, { status: "IN_FLIGHT", flightHours: 0, _inFlightSeconds: 0 });
+                            inFlight.push(flightObj);
+                            oModel.setProperty("/InFlight", inFlight);
                         } else {
                             MessageToast.show("Flight " + nextFlight.flightNumber + " is still pending approval. Keeping in queue.");
                         }
@@ -113,6 +130,36 @@ sap.ui.define([
                     });
             } else {
                 MessageToast.show("No flights in the queue to post.");
+            }
+        },
+
+        _updateInFlight: function () {
+            var oModel = this.getView().getModel();
+            var inFlight = oModel.getProperty("/InFlight") || [];
+            var changed = false;
+            for (var i = inFlight.length - 1; i >= 0; i--) {
+                var flight = inFlight[i];
+                flight.flightHours = (flight.flightHours || 0) + 10;
+                flight._inFlightSeconds = (flight._inFlightSeconds || 0) + 1;
+                changed = true;
+                if (flight._inFlightSeconds >= 10) {
+                    // After 10 seconds, set status to READY and remove from InFlight
+                    inFlight.splice(i, 1);
+                    // Optionally, update the aircraft status in the model
+                    var aircraftList = oModel.getProperty("/Aircraft");
+                    var aircraft = aircraftList.find(function (a) { return a.tailNumber === flight.aircraft; });
+                    if (aircraft) {
+                        aircraft.lastCheck = new Date().toISOString();
+                        aircraft.nextCheck = "TBD";
+                        aircraft._scheduled = false;
+                        // Force model refresh for UI update
+                        oModel.setProperty("/Aircraft", JSON.parse(JSON.stringify(aircraftList)));
+                    }
+                    MessageToast.show("Flight " + flight.flightNumber + " completed and set to READY.");
+                }
+            }
+            if (changed) {
+                oModel.setProperty("/InFlight", inFlight);
             }
         },
 

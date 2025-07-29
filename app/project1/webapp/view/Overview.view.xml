@@ -1,69 +1,91 @@
+
 <mvc:View
   controllerName="project1.controller.Overview"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m"
   xmlns:core="sap.ui.core"
 >
-  <Panel headerText="Aircraft Overview" class="card-panel sapUiResponsiveMargin" width="auto" height="400px">
-    <ScrollContainer height="320px" vertical="true">
-      <List
-        id="aircraftList"
-        items="{/Aircraft}">
-      <CustomListItem>
-        <HBox justifyContent="SpaceBetween" alignItems="Center">
-          <VBox>
-            <Text text="Tail #: {tailNumber}" />
-            <Text text="Model: {model}" />
-            <Text text="Flight Hours: {flightHours}" />
-            <Text text="Last Check: {lastCheck}" />
-            <Text text="Next Check: {nextCheck}" />
-          </VBox>
-          <Button
-            text="Schedule"
-            press="onSchedulePress"
-            enabled="{= !${_scheduled} }">
-            <customData>
-              <core:CustomData key="TailNumber" value="{tailNumber}" />
-            </customData>
-          </Button>
-        </HBox>
-      </CustomListItem>
-    </List>
-    </ScrollContainer>
-  </Panel>
+  <ScrollContainer height="100vh" vertical="true">
+    <Panel headerText="Aircraft Overview" class="card-panel sapUiResponsiveMargin" width="auto" height="400px">
+      <ScrollContainer height="320px" vertical="true">
+        <List
+          id="aircraftList"
+          items="{/Aircraft}">
+        <CustomListItem>
+          <HBox justifyContent="SpaceBetween" alignItems="Center">
+            <VBox>
+              <Text text="Tail #: {tailNumber}" />
+              <Text text="Model: {model}" />
+              <Text text="Flight Hours: {flightHours}" />
+              <Text text="Last Check: {lastCheck}" />
+              <Text text="Next Check: {nextCheck}" />
+            </VBox>
+            <Button
+              text="Schedule"
+              press="onSchedulePress"
+              enabled="{= !${_scheduled} }">
+              <customData>
+                <core:CustomData key="TailNumber" value="{tailNumber}" />
+              </customData>
+            </Button>
+          </HBox>
+        </CustomListItem>
+      </List>
+      </ScrollContainer>
+    </Panel>
 
-  <Panel headerText="Schedule Queue" class="card-panel sapUiResponsiveMargin" width="auto" height="400px">
-    <ScrollContainer height="320px" vertical="true">
-      <List
-        id="scheduleQueueList"
-        items="{/ScheduleQueue}">
-      <CustomListItem>
-        <HBox justifyContent="SpaceBetween" alignItems="Center">
-          <VBox>
-            <Text text="Flight #: {flightNumber}" />
-            <Text text="Tail #: {aircraft}" />
-            <Text text="Departure: {departure}" />
-            <Text text="Arrival: {arrival}" />
-            <Text text="Status: {status}" />
-          </VBox>
-          <Button
-            text="Remove"
-            press="onRemoveQueueItem"
-            enabled="true">
-            <customData>
-              <core:CustomData key="QueueIndex" value="{#}" />
-              <core:CustomData key="TailNumber" value="{aircraft}" />
-            </customData>
-          </Button>
-        </HBox>
-      </CustomListItem>
-    </List>
-    </ScrollContainer>
-    <Button
-      text="Process Next Flight"
-      press="onPostNextQueueItem"
-      enabled="{= ${/ScheduleQueue}.length > 0 }"
-      style="Emphasized"
-    />
-  </Panel>
+    <Panel headerText="Schedule Queue" class="card-panel sapUiResponsiveMargin" width="auto" height="400px">
+      <ScrollContainer height="320px" vertical="true">
+        <List
+          id="scheduleQueueList"
+          items="{/ScheduleQueue}">
+        <CustomListItem>
+          <HBox justifyContent="SpaceBetween" alignItems="Center">
+            <VBox>
+              <Text text="Flight #: {flightNumber}" />
+              <Text text="Tail #: {aircraft}" />
+              <Text text="Departure: {departure}" />
+              <Text text="Arrival: {arrival}" />
+              <Text text="Status: {status}" />
+            </VBox>
+            <Button
+              text="Remove"
+              press="onRemoveQueueItem"
+              enabled="true">
+              <customData>
+                <core:CustomData key="QueueIndex" value="{#}" />
+                <core:CustomData key="TailNumber" value="{aircraft}" />
+              </customData>
+            </Button>
+          </HBox>
+        </CustomListItem>
+      </List>
+      </ScrollContainer>
+      <Button
+        text="Process Next Flight"
+        press="onPostNextQueueItem"
+        enabled="{= ${/ScheduleQueue}.length > 0 }"
+        style="Emphasized"
+      />
+    </Panel>
+
+    <Panel headerText="In-Flight Flights" class="card-panel sapUiResponsiveMargin" width="auto" height="400px">
+      <ScrollContainer height="320px" vertical="true">
+        <List
+          id="inFlightList"
+          items="{/InFlight}">
+          <CustomListItem>
+            <HBox justifyContent="SpaceBetween" alignItems="Center">
+              <VBox>
+                <Text text="Flight #: {flightNumber}" />
+                <Text text="Tail #: {aircraft}" />
+                <Text text="Flight Hours: {flightHours}" />
+                <Text text="Status: {status}" />
+              </VBox>
+            </HBox>
+          </CustomListItem>
+        </List>
+      </ScrollContainer>
+    </Panel>
+  </ScrollContainer>
 </mvc:View>
